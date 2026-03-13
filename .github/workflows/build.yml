@@ -21,4 +21,4 @@ jobs:
           args: >
             -Dsonar.projectKey=nacef-bouziene_The-Fortress-Pipeline
             -Dsonar.organization=nacef-bouziene
-            -Dsonar.sources=.
+            -Dsonar.sources=src
