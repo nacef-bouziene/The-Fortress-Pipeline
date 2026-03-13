@@ -17,8 +17,4 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=nacef-bouziene_The-Fortress-Pipeline
-            -Dsonar.organization=nacef-bouziene
-            -Dsonar.sources=src
+       
