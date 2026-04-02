@@ -9,20 +9,6 @@ on:
 
 jobs:
 
-  # 1. Secrets Scan (Gitleaks)
-  secrets-scan:
-    name: Gitleaks Scan
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Gitleaks scan
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   # 2. Code Quality (SonarQube)
   code-quality:
     name: SonarQube Analysis
@@ -40,3 +26,19 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  # 1. Secrets Scan (Gitleaks)
+  secrets-scan:
+    name: Gitleaks Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Gitleaks scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
